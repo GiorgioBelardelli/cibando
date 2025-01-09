@@ -1,39 +1,4 @@
-<header class="bg-red">
-  <nav class="navbar bg-red navbar-expand-lg bg-body-tertiary " data-bs-theme="dark">
-    <img src="../assets/images/icona-cibando.png" class="icona-cibando" alt="iconacibando">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Cibando</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home <i class="pi pi-home" style="font-size: 1rem"></i></a>
-
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Ricette <i class="pi pi-book" style="font-size: 1rem"> </i></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contatti <i class="pi pi-envelope" style="font-size: 1rem"></i></a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</header>
-
-<app-carousel></app-carousel>
-
-<div class="container-title">
-  <h1 [ngClass]=" evidenziato ? 'testo-evidenziato' : ''" (click)="onEvidenziazione()" style="cursor: pointer;">Benvenuti in Cibando</h1>
-  <p [ngStyle]="{'Background-color' : evidenziato ? 'yellow' : '' }">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-     Consequatur fuga culpa dicta illum ipsam consequuntur eaque iusto quis! Eaque ipsum reprehenderit doloribus.
-     Doloremque facilis incidunt quam in consectetur distinctio ut.
-    </p>
-</div>
-
+<app-header></app-header>
 
 
 <router-outlet />

@@ -8,11 +8,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'cibando';
-
-  evidenziato = false;
-
-  onEvidenziazione(){
-    this.evidenziato = !this.evidenziato;
-    //console.log("Hai cliccato il titolo");
-  }
 }
