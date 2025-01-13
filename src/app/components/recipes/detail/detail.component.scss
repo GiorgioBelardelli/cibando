@@ -1,0 +1,18 @@
+@import "../../../styles/colours.scss";
+
+h1{
+  color: $primaryColor-1;
+}
+
+.ricetta-image{
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+}
+
+.grey{
+  color: $secondaryColor-3;
+}

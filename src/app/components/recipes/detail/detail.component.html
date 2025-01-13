@@ -1,1 +1,7 @@
-<p>detail works!</p>
+<div class="ricetta-image" [ngStyle]="{'background-image': 'url(' + ricetta.image + ')'}"></div>
+<h1 class="primary-color1">{{ricetta.title}}</h1>
+<p class="grey">{{ricetta.description}}</p>
+<br>
+<strong>Difficoltà:</strong>
+<br>
+<span class="grey">Ricetta pubblicata il: {{ricetta.date}}</span>
