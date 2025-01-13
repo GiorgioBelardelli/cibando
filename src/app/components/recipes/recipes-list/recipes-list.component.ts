@@ -12,6 +12,7 @@ import { Recipe } from '../../../models/recipes.models';
 })
 export class RecipesListComponent {
   ricette: Recipe[] = [];
+  titoloRicevuto: string;
 
     constructor( private recipeServices:RecipeService ){
       this.recipeServices.getRecipes().subscribe({
@@ -21,4 +22,8 @@ export class RecipesListComponent {
           error: (e) => console.log(e)
       })
     }
+
+  riceviTitolo(event){
+    this.titoloRicevuto = event;
+  }
 }

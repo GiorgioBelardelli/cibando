@@ -1,7 +1,7 @@
 <div class="card-container">
   <div *ngFor="let ricetta of recipes; let i=index">
     <div class="card" style="width: 18rem;">
-      <div class="card-image" [ngStyle]="{'background-image': 'url(' + ricetta.image + ')'}"></div>
+      <div class="card-image" [ngStyle]="{'background-image': 'url(' + ricetta.image + ')'}" (click)="inviaTitolo(ricetta.title)"></div>
       <div class="card-body">
         <h5 class="card-title">{{ricetta.title}}</h5>
         <p class="card-text">{{ricetta.description | slice: 0:250}}...</p>

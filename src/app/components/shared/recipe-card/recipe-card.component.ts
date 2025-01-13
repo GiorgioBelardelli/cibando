@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Recipe } from '../../../models/recipes.models';
 
 @Component({
@@ -11,5 +11,10 @@ import { Recipe } from '../../../models/recipes.models';
 export class RecipeCardComponent {
   // con la riga di codice sotto stiamo dicendo che ricette è un array di una variabile Recipe(tipizzata come abbiamo scritto nel model)
   // ed è di tipo Inputo, ovvero predisposta a venire popolata da qualcun altro (nel nostro caso, il padre    )
-  @Input() recipes: Recipe[] =  []
+  @Input() recipes: Recipe[] | undefined;
+  @Output() messaggio = new EventEmitter();
+
+  inviaTitolo(titolo:string){
+    this.messaggio.emit(titolo);
+  }
 }
