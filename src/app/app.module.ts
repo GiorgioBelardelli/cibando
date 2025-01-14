@@ -4,6 +4,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //routing
 import { AppRoutingModule } from './app-routing.module';
 //componenti
@@ -16,6 +17,7 @@ import { HeaderComponent } from './components/shared/header/header.component';
 import { RecipeCardComponent } from './components/shared/recipe-card/recipe-card.component';
 import { DetailComponent } from './components/recipes/detail/detail.component';
 import { RecipesListComponent } from './components/recipes/recipes-list/recipes-list.component';
+import { RegistrationComponent } from './components/user/registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { RecipesListComponent } from './components/recipes/recipes-list/recipes-
     HeaderComponent,
     RecipeCardComponent,
     DetailComponent,
-    RecipesListComponent
+    RecipesListComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,9 @@ import { RecipesListComponent } from './components/recipes/recipes-list/recipes-
     AppRoutingModule,
     NgbAccordionModule,
     NgbModule,
-    NgbCollapseModule
+    NgbCollapseModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
