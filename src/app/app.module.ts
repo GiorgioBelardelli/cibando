@@ -5,6 +5,7 @@ import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PasswordModule } from 'primeng/password';
 //routing
 import { AppRoutingModule } from './app-routing.module';
 //componenti
@@ -39,7 +40,8 @@ import { RegistrationComponent } from './components/user/registration/registrati
     NgbModule,
     NgbCollapseModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PasswordModule
   ],
   providers: [],
   bootstrap: [AppComponent]

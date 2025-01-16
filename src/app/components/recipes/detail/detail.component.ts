@@ -27,13 +27,14 @@ export class DetailComponent implements OnInit {
   ngOnInit(): void {
     this.onGetDetail();
   }
-    onGetDetail(){
-      const id = Number(this.activatedRoute.snapshot.paramMap.get("_id"));
-      if(id){
-        this.recipeService.getDetail(id).subscribe({ next: res => {this.ricetta = res;}, error: e => console.log(e)})
-      }
 
+  onGetDetail(){
+    const id = Number(this.activatedRoute.snapshot.paramMap.get("_id"));
+    if(id){
+      this.recipeService.getDetail(id).subscribe({ next: res => {this.ricetta = res;}, error: e => console.log(e)})
     }
+
+  }
 
   onGetDetail2():void {
     this.activatedRoute.params.subscribe((urlParams) => {
