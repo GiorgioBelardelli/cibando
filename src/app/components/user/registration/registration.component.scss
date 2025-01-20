@@ -1,1 +1,20 @@
+@import '../../../styles/colours.scss';
+@import "primeicons/primeicons.css";
 
+a{
+  text-decoration: none;
+}
+
+.red-border{
+  border: 3px solid $primaryColor-1;
+}
+
+.btn{
+  background-color: $primaryColor-1;
+  border: 0px ;
+}
+.pi{
+  position: relative;
+  top: 30px;
+  left: -20px;
+}

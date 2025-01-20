@@ -6,6 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PasswordModule } from 'primeng/password';
+import { PaginatorModule } from 'primeng/paginator';
 //routing
 import { AppRoutingModule } from './app-routing.module';
 //componenti
@@ -19,6 +20,7 @@ import { RecipeCardComponent } from './components/shared/recipe-card/recipe-card
 import { DetailComponent } from './components/recipes/detail/detail.component';
 import { RecipesListComponent } from './components/recipes/recipes-list/recipes-list.component';
 import { RegistrationComponent } from './components/user/registration/registration.component';
+import { ContactsComponent } from './components/contacts/contacts.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { RegistrationComponent } from './components/user/registration/registrati
     RecipeCardComponent,
     DetailComponent,
     RecipesListComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    ContactsComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,8 @@ import { RegistrationComponent } from './components/user/registration/registrati
     NgbCollapseModule,
     FormsModule,
     ReactiveFormsModule,
-    PasswordModule
+    PasswordModule,
+    PaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

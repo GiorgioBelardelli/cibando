@@ -1,0 +1,64 @@
+
+<body>
+
+  <div class="wrapper">
+    <div class="container">
+      <h1>Rimaniamo in contatto!</h1>
+      <div class="form-container">
+      <form class="contacts-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+        <div class="input-container">
+          <label for="nome">Nome</label>
+          <input
+            type="text"
+            name="nome"
+            formControlName="nome"
+            [ngClass]="{
+              'border-red': !form.get('nome')?.valid && form.get('nome')?.touched,
+              'border-green': form.get('nome')?.valid && form.get('nome')?.touched
+              }">
+        </div>
+
+        <div class="input-container">
+          <label for="email">Email</label>
+          <input
+            type="text"
+            name="email"
+            formControlName="email"
+            [ngClass]="{
+              'border-red': !form.get('email')?.valid && form.get('email')?.touched,
+              'border-green': form.get('email')?.valid && form.get('email')?.touched
+              }">
+        </div>
+
+        <div class="input-container">
+          <label for="oggetto">Oggetto</label>
+          <input
+            type="text"
+            name="oggetto"
+            formControlName="oggetto"
+            [ngClass]="{
+              'border-red': !form.get('oggetto')?.valid && form.get('oggetto')?.touched,
+              'border-green': form.get('oggetto')?.valid && form.get('oggetto')?.touched
+            }">
+        </div>
+
+        <label for="messaggio">Scrivici!</label>
+        <textarea
+          rows="4"
+          cols="100"
+          name="messaggio"
+          formControlName="messaggio"
+          [ngClass]="{
+            'border-red': !form.get('messaggio')?.valid && form.get('messaggio')?.touched,
+            'border-green': form.get('messaggio')?.valid && form.get('messaggio')?.touched
+          }">
+        </textarea>
+
+
+        <button [disabled] = "attivaBottone()" type="submit" data-mdb-button-init data-mdb-ripple-init class="submit-button"> Invia </button>
+      </form>
+        </div>
+    </div>
+  </div>
+</body>

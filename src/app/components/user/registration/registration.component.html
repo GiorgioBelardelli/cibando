@@ -73,7 +73,7 @@
   <div class="container h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-lg-12 col-xl-11">
-        <div class="card text-black" style="border-radius: 25px;">
+        <div class="card text-black red-border" style="border-radius: 25px;">
           <div class="card-body p-md-5">
             <div class="row justify-content-center">
               <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
@@ -84,8 +84,9 @@
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                      <input type="text" id="form3Example1c" class="form-control" name="nome" formControlName="nome" (ngModelChange)="scriviInNome($event)"/>
-                      <label class="form-label" for="form3Example1c">Nome</label>
+                      <i class="pi pi-user"></i>
+                      <input type="text" placeholder="nominativo" id="form3Example1c" class="form-control" name="nome" formControlName="nome" (ngModelChange)="scriviInNome($event)"/>
+                      <label class="form-label" for="form3Example1c">il tuo nome</label>
                       <p class="is-danger" *ngIf="!form.get('nome')?.valid && form.get('nome').touched">
                         Campo obbligatorio
                       </p>
@@ -94,8 +95,9 @@
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                      <input type="email" id="form3Example3c" class="form-control" name="email" formControlName="email"/>
-                      <label class="form-label" for="form3Example3c">Email</label>
+                      <i class="pi pi-envelope"></i>
+                      <input type="email" placeholder="email" id="form3Example3c" class="form-control" name="email" formControlName="email"/>
+                      <label class="form-label" for="form3Example3c">la tua email</label>
                       <p class="is-danger" *ngIf="form.controls.email.hasError('required') && form.get('email').touched">
                         Campo obbligatorio
                       </p>
@@ -106,8 +108,10 @@
                   </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
+
                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                      <p-password formControlName="password" class="form-control" [toggleMask]="true" strongRegex="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$" />
+                      <i class="pi pi-lock"></i>
+                      <p-password formControlName="password" placeholder="password" class="form-control" [toggleMask]="true" strongRegex="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$" />
                       <label class="form-label" for="form3Example4c">Password</label>
                       <p class="is-danger" *ngIf="form.controls.password.hasError('required') && form.get('password').touched">
                         Campo obbligatorio
@@ -116,12 +120,14 @@
                         Deve contenere almeno un numero, una maiuscola, una minuscola, un carattere speciale, minimo 6 caratteri e massimo 15
                       </p>
                     </div>
+
                   </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
+                      <i class="pi pi-lock"></i>
                       <input type="password" id="form3Example4cd" class="form-control" name="ripetiPassword" formControlName="ripetiPassword" (ngModelChange)="comparaPassword($event)"/>
-                      <label class="form-label" for="form3Example4cd">Conferma password</label>
+                      <label class="form-label" for="form3Example4cd">Ripeti password</label>
                       <p class="is-danger"  *ngIf="form.controls.password.hasError('required') && form.get('ripetiPassword').touched">
                         Campo obbligatorio
                       </p>
@@ -134,7 +140,7 @@
                   <div class="form-check d-flex justify-content-center mb-5">
                     <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" name="accetto" formControlName="accetto"/>
                     <label class="form-check-label" for="form2Example3">
-                      Accetto i <a href="#!">Termini d'uso</a>
+                      Dichiato di accettare i <a href="#!" class="red-color">Termini del servizio</a>
                       <p class="is-danger" *ngIf="!form.get('accetto')?.valid && form.get('accetto').touched">Devi accettare i termini d'uso</p>
                     </label>
                   </div>
@@ -148,9 +154,8 @@
               </div>
               <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
 
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                <img src="https://www.projectinvictus.it/wp-content/uploads/2019/12/Cibi-che-fanno-ingrassare.001.jpeg"
                   class="img-fluid" alt="Sample image">
-
               </div>
             </div>
           </div>

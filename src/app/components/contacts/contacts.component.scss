@@ -1,0 +1,79 @@
+@import '../../styles/colours.scss';
+body{
+  background-image: url('https://media-assets.lacucinaitaliana.it/photos/65e20238467ae5cb465cda83/16:9/w_2560%2Cc_limit/1042132904');
+  height: 100%;
+
+  .wrapper{
+    margin: 0 auto;
+    width: 1000px;
+    padding: 5rem;
+
+    .container{
+    background-color: $primaryColor-2;
+
+    width: 800px;
+    height: 600px;
+    padding: 2rem;
+    border: 1px solid $primaryColor-1;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgb(104, 104, 104);
+
+    .form-container{
+      padding: 5rem;
+      font-size: 18px;
+
+
+      .contacts-form{
+        display: flex;
+        flex-direction: column;
+
+        .input-container{
+          margin: .5rem;
+
+        }
+        label{
+          width: 100px;
+          margin-top: .5rem;
+        }
+        input{
+          border: 0;
+          border-bottom: 1px solid black;
+          width: 300px;
+
+        }
+        input:focus{
+          text-decoration: none;
+          outline: none;
+          border: 0;
+          border-bottom: 1px solid black;
+          box-shadow: 5px 5px 10px rgb(198, 194, 194);
+
+        }
+
+        .submit-button{
+          width: 100px;
+          height: 50px;
+          margin: 0 auto ;
+          border: 0;
+          color: white;
+
+          border-radius: 10px;
+          background-color: $primaryColor-1;
+        }
+        .submit-button:hover{
+          box-shadow: 0px 0px 10px rgb(74, 74, 74);
+        }
+      }
+    }
+  }
+}
+
+.border-red{
+  border: 1px solid $primaryColor-1 !important;
+  border-radius: 10px;
+}
+.border-green{
+  border: 1px solid green !important;
+  border-radius: 10px;
+}
+}
