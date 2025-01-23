@@ -29,7 +29,7 @@ export class DetailComponent implements OnInit {
   }
 
   onGetDetail(){
-    const id = Number(this.activatedRoute.snapshot.paramMap.get("_id"));
+    const id = this.activatedRoute.snapshot.paramMap.get("_id");
     if(id){
       this.recipeService.getDetail(id).subscribe({ next: res => {this.ricetta = res;}, error: e => console.log(e)})
     }
@@ -38,10 +38,11 @@ export class DetailComponent implements OnInit {
 
   onGetDetail2():void {
     this.activatedRoute.params.subscribe((urlParams) => {
+      const stringId = urlParams['_id'];
       const id = Number(urlParams['_id']);
 
       if(id){
-        this.recipeService.getDetail(id).subscribe(res => this.ricetta = res);
+        this.recipeService.getDetail(stringId).subscribe(res => this.ricetta = res);
       }
       //const title = urlParams['title'];
     })

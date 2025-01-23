@@ -1,0 +1,35 @@
+<div class="wrapper">
+  <div class="form-container">
+
+    <form #form="ngForm">
+
+      <h3>Inserisci le tue credenziali</h3>
+      <div class="input-container">
+        <p-floatLabel>
+          <input pInputText id="email" ngModel name="email" />
+          <label for="email">Username/Email</label>
+        </p-floatLabel>
+      </div>
+
+      <div class="input-container">
+        <p-floatLabel>
+          <p-password ngModel [toggleMask]="true" name="password" />
+          <label for="username">Password</label>
+        </p-floatLabel>
+      </div>
+
+      <div class="errormsg-container" *ngIf="errorMessage.length" >
+        <span class="red-color">{{errorMessage}}</span>
+      </div>
+
+      <div class="button-container">
+        <p-button label="Accedi" icon="pi pi-check" iconPos="right" (onClick)="onSubmit(form.value)"/>
+      </div>
+    </form>
+
+    <div class="avviso-container">
+      <span>Non sei registrato? Allora <a routerLink="/registrazione"> registrati! </a></span>
+    </div>
+
+  </div>
+</div>

@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { UserService } from './../../../services/user.service';
+import { Component, DoCheck, inject } from '@angular/core';
 import { RecipeService } from '../../../services/recipe.service';
 import { Recipe } from '../../../models/recipes.models';
-import { PaginatorModule } from 'primeng/paginator';
+import { pipe,take,map,first,filter, Observable } from 'rxjs';
+
 
 interface PageEvent {
   first: number;
@@ -18,19 +20,55 @@ interface PageEvent {
   styleUrl: './recipes-list.component.scss'
 
 })
-export class RecipesListComponent {
+export class RecipesListComponent{
+  recipeService = inject(RecipeService);
+  userService = inject(UserService);
+
   ricette: Recipe[] = [];
   titoloRicevuto: string;
+
+  role;
 
   first: number = 0;
   rows: number = 10;
   page = 1;
   size = 4;
 
-  constructor( private recipeServices:RecipeService ){
-      this.recipeServices.getRecipes().subscribe({
+  totaleRicette: Recipe[];
+
+  recipes$= this.recipeService.getRecipes().pipe(
+    map(response => response.filter(ricetteFiltrate => ricetteFiltrate.difficulty < 3 )),
+    map(res => this.totaleRicette = res)
+  )
+
+  constructor(){
+    this.role  = JSON.parse(localStorage.getItem('user')).role;
+
+  }
+
+  // getUser(){
+  //   this.userService.getUserDetail(this.email).subscribe({
+
+  //     next: (res) =>{
+  //       this.user = res
+  //     },
+  //     error : (e) =>console.log(e)
+
+  //   })
+  // }
+
+  getRecipes(){
+    this.recipeService.getRecipes().pipe(first()
+        /*
+        //MODI PER FILTRARE LA CHIAMATA PRIMA CHE ARRIVI
+        take(1),
+        map((res) => res.content),
+        filter()
+        */
+      ).subscribe({
         next: (res) => {
-        this.ricette = res;
+          this.ricette = res.sort((a,b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+        //this.ricette = res;
       },
       error: (e) => console.log(e)
     })

@@ -1,0 +1,42 @@
+<div class="wrapper">
+  <div class="dashboard-container">
+    <h2>Benvenuto <span class="red-color">{{user.name}}</span> </h2>
+    <h4 class="red-color">Riepilogo dati</h4>
+    <div class="dashboard">
+
+      <div class="input-container">
+        <label class="red-color" for="profile-data">Il tuo nome: </label>
+        <div class="profile-data">
+          {{user.name}}
+        </div>
+      </div>
+      <div class="input-container">
+        <label class="red-color" for="profile-data">la tua mail: </label>
+        <div class="profile-data">
+          {{user?.email}}
+        </div>
+      </div>
+
+      <div class="input-container">
+        <label class="red-color" for="profile-data">Password: </label>
+        <div class="profile-data">
+          <span>{{user?.password}}</span>
+        </div>
+      </div>
+
+      <div class="input-container">
+        <label class="red-color" for="profile-data">Creazione: </label>
+        <div class="profile-data">
+          {{user?.createdAt | date}}
+        </div>
+      </div>
+
+      <div class="input-container">
+        <label class="red-color" for="profile-data">Ultima modifica: </label>
+        <div class="profile-data">
+          {{user?.updatedAt | date}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

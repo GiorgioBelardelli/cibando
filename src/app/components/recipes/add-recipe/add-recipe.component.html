@@ -1,0 +1,40 @@
+<div class="wrapper">
+  <h2>Inserisci una nuova ricetta</h2>
+  <div class="form-container">
+
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+
+      <div class="input-container">
+        <label for="title">titolo:</label>
+        <input type="text" name="title" formControlName="title">
+      </div>
+
+      <div class="input-container">
+        <label for="description">descrizione:</label>
+        <p-editor formControlName="text" [style]="{ height: '250px' }" formControlName="description" />
+      </div>
+
+      <div class="input-container">
+        <label for="image">immagine:</label>
+        <input type="text" name="image" formControlName="image">
+      </div>
+
+      <div class="input-container">
+        <label for="published">visibile:</label>
+        <input type="checkbox" name="published" formControlName="published">
+      </div>
+
+      <div class="input-container">
+        <label for="difficulty">difficoltà:</label>
+        <input type="number" name="difficulty" formControlName="difficulty">
+      </div>
+
+      <a>
+        <button type="submit">
+          aggiungi
+        </button>
+      </a>
+
+    </form>
+  </div>
+</div>

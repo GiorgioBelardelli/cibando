@@ -1,15 +1,20 @@
 <h2>Le nostre ricette!</h2> - {{titoloRicevuto}}
+<a routerLink="aggiungi-ricetta">
+  <button class="addBtn" *ngIf="role === 'admin'">
+    Inserisci una nuova ricetta
+  </button>
+</a>
 
 <!-- Comunicazione padre-figlio -->
 <div id="cards-wrapper">
-  <div class="card-container" *ngFor="let ricetta of ricette | slice: (page * size) - size : page * size">
+  <div class="card-container" *ngFor="let ricetta of recipes$ | async | slice: (page * size) - size : page * size">
     <app-recipe-card [recipe] = "ricetta" (messaggio)="riceviTitolo($event)"></app-recipe-card>
   </div>
   <div class="card flex justify-center">
     <p-paginator (onPageChange)="onPageChange($event)"
     [first]="first"
     [rows]="size"
-    [totalRecords]="ricette.length"
+    [totalRecords]="totaleRicette.length"
     [rowsPerPageOptions]="[2, 4, 8]" />
   </div>
 </div>

@@ -4,6 +4,8 @@
 @import "primeicons/primeicons.css";
 @import "../node_modules/bootstrap/dist/css/bootstrap.css";
 @import "./app/styles/colours.scss";
+@import "../node_modules/quill/dist/quill.core.css";
+@import "../node_modules/quill/dist/quill.snow.css";
 
 body{
   margin: 0;
@@ -32,4 +34,9 @@ body{
 }
 .red-color{
   color: $primaryColor-1;
+}
+
+.wrapper{
+  margin: 0 auto;
+  width: 1000px;
 }

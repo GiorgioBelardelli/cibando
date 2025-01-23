@@ -17,8 +17,17 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="contatti">Contatti <i class="pi pi-envelope" style="font-size: 1rem"></i></a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" routerLink="registrazione">Registrati <i class="pi pi-user" style="font-size: 1rem"></i></a>
+          </li> -->
+          <li class="nav-item" *ngIf="!authService.isLogged()">
+            <a class="nav-link" routerLink="login">Accedi/Registrati <i class="pi pi-user" style="font-size: 1rem"></i></a>
+          </li>
+          <li class="nav-item autenticato" *ngIf="authService.isLogged()">
+            <div>
+              <i class="pi pi-user" style="font-size: 1rem"></i> Ciao {{user?.name}} <a routerLink="profile" href="#">Il tuo Profilo</a>
+            </div>
+              <a href="#" (click)="logout()">ESCI</a>
           </li>
         </ul>
       </div>
